@@ -1,6 +1,14 @@
 // Grab the articles as a json
-
 $(document).on("click", "#scraper", function () {
+    $.getJSON("/scrape", function (data) {
+        console.log(data);
+    });
+});
+
+
+
+
+$(document).on("click", "#displayer", function () {
     $.getJSON("/articles", function (data) {
         // For each one
        
