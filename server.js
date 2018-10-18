@@ -11,6 +11,23 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
+// Connect to the Mongo DB
+
+var databaseUri = 'mongodb://localhost/newsScraper';
+
+if(process.env.MONGODB_URI){
+    mongoose.connect(process.env.MONGODB_URI);
+}
+else{
+    mongoose.connect(databaseUri);
+}
+
+
+mongoose.connect("mongodb://localhost/newsScraper", { useNewUrlParser: true });
+
+
+
+
 var PORT = 3000;
 
 // Initialize Express
@@ -26,19 +43,7 @@ app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
 
-// Connect to the Mongo DB
 
-var databaseUri = 'mongodb://localhost/newsScraper';
-
-if(process.env.MONGODB_URI){
-    mongoose.connect(process.env.MONGODB_URI);
-}
-else{
-    mongoose.connect(databaseUri);
-}
-
-
-mongoose.connect("mongodb://localhost/newsScraper", { useNewUrlParser: true });
 
 
 // Routes
