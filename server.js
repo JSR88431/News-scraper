@@ -8,6 +8,9 @@ var mongoose = require("mongoose");
 var axios = require("axios");
 var cheerio = require("cheerio");
 
+// Initialize Express
+var app = express();
+var PORT = process.env.PORT || 3000;
 // Require all models
 var db = require("./models");
 
@@ -28,10 +31,9 @@ mongoose.connect("mongodb://localhost/newsScraper", { useNewUrlParser: true });
 
 
 
-var PORT = process.env.MONGODB_URI || 3000;
 
-// Initialize Express
-var app = express();
+
+
 
 // Configure middleware
 
