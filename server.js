@@ -22,11 +22,9 @@ if(process.env.MONGODB_URI){
     mongoose.connect(process.env.MONGODB_URI);
 }
 else{
-    mongoose.connect(databaseUri);
+    mongoose.connect(databaseUri , { useNewUrlParser: true });
 }
 
-
-mongoose.connect("mongodb://localhost/newsScraper", { useNewUrlParser: true });
 
 
 
