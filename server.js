@@ -135,7 +135,7 @@ app.post("/articles/:id", function(req, res) {
 // For Deleting
 app.delete("/articles/:id", function(req, res) {
   // Create a new note and pass the req.body to the entry
-  db.Note.findByIdAndRemove(req.params.id)
+  db.Note.findByIdAndDelete(req.params.id)
   .then(function(data){
     console.log(data);
   })
