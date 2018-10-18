@@ -3,12 +3,15 @@
 $(document).on("click", "#scraper", function () {
     $.getJSON("/articles", function (data) {
         // For each one
+       
         for (var i = 0; i < data.length; i++) {
+             var newsURL = "https://www.si.com" + data[i].link;
             // Display the apropos information on the page
             $("#articles").append("<p data-id='" + data[i]._id + "' id='headline'><b>" + data[i].title + "</b></p>");
             // $('#articles').append('<p>https://www.si.com' + data[i].link + '</p>');
-            $("#articles").append("<p><a href='https://www.si.com'></a></p>");
-            $("#articles").attr("href" , "https://www.si.com" + data[i].link);
+            // $("#articles").append("<p><a href='https://www.si.com'></a></p>");
+            $('#articles').append('<p><a href="'+ newsURL + '"></a></p>');
+            
             
            
         }
