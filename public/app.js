@@ -16,12 +16,12 @@ $(document).on("click", "#displayer", function () {
             //  var newsURL = "https://www.si.com" + data[i].link;
             // Display the apropos information on the page
             $("#articles").append("<p data-id='" + data[i]._id + "' id='headline'><b>" + data[i].title + "</b></p>");
-            $('#articles').append('<p>https://www.si.com' + data[i].link + '</p>');
+            $('#articles').append('<p>' + data[i].summary + '</p>');
             // $("#articles").append("<p><a href='https://www.si.com'></a></p>");
-            // $('#articles').append('<p><a href="'+ newsURL + '"></a></p>');
+            $('#articles').append('<a href="https://www.si.com'+ data[i].link + '" target="blank">Read More</a>');
             
             
-           
+            
         }
     });
 });
@@ -117,3 +117,13 @@ $(document).on("click", "#noteRemover", function () {
     $("#bodyinput").val("");
 
 });
+
+
+// Animations
+
+$("#articles.headline").hover(function(){
+    $(this).css("color", "blue");
+    }, function(){
+    $(this).css("color", "black");
+});
+
