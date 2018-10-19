@@ -19,6 +19,7 @@ $(document).on("click", "#displayer", function () {
             $('#articles').append('<p>' + data[i].summary + '</p>');
             // $("#articles").append("<p><a href='https://www.si.com'></a></p>");
             $('#articles').append('<a href="https://www.si.com'+ data[i].link + '" target="blank">Read More</a>');
+            $("#articles").append("<button type='button' class='btn btn-primary btn-sm ml-2' id='noter' data-id='" + data[i]._id + "'>Add Note</button>");
             
             
             
@@ -28,7 +29,7 @@ $(document).on("click", "#displayer", function () {
 
 
 // Whenever someone clicks a p tag
-$(document).on("click", "#headline", function () {
+$(document).on("click", "#noter", function () {
     // Empty the notes from the note section
     $("#notes").empty();
     // Save the id from the p tag
